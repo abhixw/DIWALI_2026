@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: the-diwali-within-api
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: FRONTEND_URL
+        value: https://your-frontend.vercel.app
+      - key: ENVIRONMENT
+        value: production

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="flame" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF4CC"/>
+      <stop offset="35%" stop-color="#E9BD62"/>
+      <stop offset="70%" stop-color="#E97832"/>
+      <stop offset="100%" stop-color="rgba(233,120,50,0)"/>
+    </radialGradient>
+    <linearGradient id="clay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A64C"/>
+      <stop offset="100%" stop-color="#7B3428"/>
+    </linearGradient>
+  </defs>
+  <!-- Flame -->
+  <path d="M32 6 C35 18, 44 26, 38 38 C34 44, 28 44, 26 38 C20 26, 29 18, 32 6 Z" fill="url(#flame)"/>
+  <!-- Diya Base -->
+  <path d="M10 38 C14 54, 50 54, 54 38 C42 42, 22 42, 10 38 Z" fill="url(#clay)"/>
+  <ellipse cx="32" cy="38" rx="22" ry="5" fill="#E9BD62" opacity="0.6"/>
+</svg>

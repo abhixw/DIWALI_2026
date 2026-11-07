@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-diwali-bg: #11100F;
+  --color-diwali-card: #1B1916;
+  --color-diwali-gold: #D4A64C;
+  --color-diwali-gold-light: #E9BD62;
+  --color-diwali-saffron: #E97832;
+  --color-diwali-cream: #F5E9D1;
+  --color-diwali-maroon: #7B3428;
+  --color-diwali-text: #F5F0E8;
+  --color-diwali-muted: #A39B92;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-letter: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #11100F;
+    color: #F5F0E8;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-serif);
+  }
+
+  .font-letter {
+    font-family: var(--font-letter);
+  }
+}
+
+/* Custom Diwali visual utilities */
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(212, 166, 76, 0.35), 0 0 15px -2px rgba(233, 120, 50, 0.2);
+}
+
+.gold-glow-lg {
+  box-shadow: 0 0 60px -5px rgba(212, 166, 76, 0.45), 0 0 30px 2px rgba(233, 120, 50, 0.3);
+}
+
+.gold-text-glow {
+  text-shadow: 0 0 20px rgba(233, 189, 98, 0.5), 0 0 40px rgba(212, 166, 76, 0.25);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF4CC 0%, #E9BD62 50%, #D4A64C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Fallback: if background-clip isn't supported, show solid gold */
+@supports not (background-clip: text) {
+  .text-gold-gradient {
+    background: none;
+    -webkit-text-fill-color: #E9BD62;
+    color: #E9BD62;
+  }
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle, rgba(233,189,98,0.4) 0%, rgba(233,120,50,0.2) 40%, transparent 70%);
+}
+
+.bg-radial-diwali {
+  background: radial-gradient(circle at 50% 20%, rgba(212, 166, 76, 0.12) 0%, rgba(123, 52, 40, 0.08) 40%, rgba(17, 16, 15, 0.98) 80%);
+}
+
+.bg-diwali-card {
+  background: linear-gradient(180deg, rgba(27, 25, 22, 0.85) 0%, rgba(20, 19, 18, 0.95) 100%);
+  border: 1px solid rgba(212, 166, 76, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.bg-diwali-card:hover {
+  border-color: rgba(233, 189, 98, 0.4);
+}
+
+/* Flame flicker animation */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 12px rgba(233, 120, 50, 0.8));
+  }
+  25% {
+    transform: scale(1.04) rotate(1deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(233, 189, 98, 0.9));
+  }
+  50% {
+    transform: scale(0.97) rotate(-0.5deg);
+    opacity: 0.92;
+    filter: drop-shadow(0 0 14px rgba(233, 120, 50, 0.7));
+  }
+  75% {
+    transform: scale(1.02) rotate(0.8deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 22px rgba(233, 189, 98, 0.95));
+  }
+}
+
+.flame-animation {
+  animation: flicker 3s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #11100F;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 166, 76, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 166, 76, 0.6);
+}
